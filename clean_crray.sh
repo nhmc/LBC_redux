@@ -1,0 +1,1 @@
+rm -rf */lacos* */crrays */*_bpm */*.pl */wght.fits */amps */subsets */wcsdone

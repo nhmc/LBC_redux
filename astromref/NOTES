@@ -1,0 +1,21 @@
+Create an object catalogue from an image to use as an astrometry
+reference catalogue with scamp.
+
+You need to supply an image and weight image. Edit the image and
+weight names in run.sh. If you don't have a weight image, comment out
+the weight options line.
+
+sh run.sh
+
+This creates astrefcat.cat. Filter out bad, marginal and very extended
+detections with filtercat.py. (Needs pyfits to be installed!)
+
+python filtercat.py
+
+Now you can use the resulting file astrefcat.cat as a reference
+astrometry file for scamp. you need to set  
+
+-ASTREF_CATALOG FILE -ASTREF_BAND DEFAULT -ASTREFCAT_NAME astrefcat.cat \
+-ASTREFMAG_KEY MAG_AUTO
+
+See the astrom.scamp file for an example.

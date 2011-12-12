@@ -1,0 +1,42 @@
+This is a collection of scripts for reducing LBC data.  It is very
+heavily based on Ben Weiner's nice collection of scripts
+(http://mingus.as.arizona.edu/~bjw/software/). The main advantage of
+this package is that doesn't require IDL to run; instead it uses
+Python.
+
+Please let me know if you plan to using the package so I can
+help. Much of it will be difficult to understand if you try to dive in
+by yourself.
+
+In rough order of execution, the scripts do the following:
+
+commands.sh:  Basic overview of the order in which to run commands.
+
+sort_LBC.py: script to sort the raw LBC files into bias/flats/object
+  frames.
+
+*.cl: iraf functions for inital LBC reduction and cosmic ray removal.
+
+clean_crrays.sh: remove all the temporary files after the IRAF cosmic
+  ray rejection script is done.
+
+prepare.py: copy all the necessary files to a directory to prepare for
+  reduction.
+
+cp_reduction_files.sh: copy the reduction files necessary to run
+  lbc.py.
+
+lbc.py: perform astrometry, resampling and image combinations with
+  scamp and swarp, one chip at a time.
+
+run.sh: Examples of how to call lbc.py.
+
+makeList.sh: Select which exposures should be grouped to make the
+  co-added image.
+
+conf/: Sextractor, scamp and swarp configuration files.
+
+astromref/: configuration files and scripts necessary for making an
+  astrometry reference catalogue from an image using Sextractor. This
+  should not be necessary with LBC, USNO or SDSS stars in my
+  experience allow a good enough solution to be found.
