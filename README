@@ -4,9 +4,9 @@ heavily based on Ben Weiner's nice collection of scripts
 this package is that doesn't require IDL to run; instead it uses
 Python.
 
-Please let me know if you plan to using the package so I can
-help. Much of it will be difficult to understand if you try to dive in
-by yourself.
+Please let me know if you plan to use the package so I can help. Much
+of it will be difficult to understand if you try to dive in by
+yourself.
 
 In rough order of execution, the scripts do the following:
 
