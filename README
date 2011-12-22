@@ -1,8 +1,8 @@
 This is a collection of scripts for reducing LBC data.  It is very
 heavily based on Ben Weiner's nice collection of scripts
 (http://mingus.as.arizona.edu/~bjw/software/). The main advantage of
-this package is that doesn't require IDL to run; instead it uses
-Python.
+this package is that it doesn't require IDL to run; instead it uses
+Python. It requires IRAF, Scamp, Swarp and Sextractor.
 
 Please let me know if you plan to use the package so I can help. Much
 of it will be difficult to understand if you try to dive in by
@@ -38,5 +38,5 @@ conf/: Sextractor, scamp and swarp configuration files.
 
 astromref/: configuration files and scripts necessary for making an
   astrometry reference catalogue from an image using Sextractor. This
-  should not be necessary with LBC, USNO or SDSS stars in my
-  experience allow a good enough solution to be found.
+  should not be necessary with LBC - in my experience USNO or SDSS
+  coordinates allow a good enough solution to be found.
