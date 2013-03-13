@@ -141,7 +141,7 @@ fhdr lbc?.????????.??????.fits LBCOBNAM EXPTIME
 
 # do_lbc_red trimnover- biassub- bias- twiflat- saturcorr- flatdo- fringeframe+ fringedo+ crrays- addmasks- dowcs- mkweight-
 
-# # Do crraysthe list to do is same as fringedolist
+# # Do crrays the list to do is same as fringedolist
 # # This will take a long time - about 8-9 minutes per image, on my desktop
 
 # # Make sure you have a bunch of free disk space because the tasks are

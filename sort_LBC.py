@@ -4,7 +4,7 @@ import sys,os
 from subprocess import call
 import textwrap
 from glob import glob
-from astro.io import loadobj, saveobj, writetxt
+from barak.io import loadobj, saveobj, writetxt
 
 def makedir(dirname, clean=False):
     """ Make a directory only if it doesn't exist.
