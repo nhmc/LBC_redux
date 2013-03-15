@@ -26,6 +26,7 @@ filter_str = {'SDT_Uspec':'Us',
               'i-SLOAN':'i',
               'z-SLOAN':'z',
               'V-BESSEL':'V',
+              'V-BESSEL(?)':'V',
               'R-BESSEL':'R',
               'B-BESSEL':'B',
               'I-BESSEL':'I',
@@ -44,7 +45,7 @@ current directory!"""
 
 
 if 1:
-    filenames = glob('raw/*.fits.gz')
+    filenames = glob('raw/*.fits*')
 
     if len(filenames) == 0:
         print usage
@@ -154,7 +155,7 @@ if 1:
         
         writetxt('sort_LBC_unused', [unused], overwrite=1)
 
-if 0:
+if 1:
     # make links to the biases
     if len(biases) > 0:
         makedir('bias')
@@ -170,7 +171,7 @@ if 0:
             names.append(n.replace('.fits.gz', '.fits'))
         writetxt(biasdir + '/list', [sorted(names)], overwrite=1)
 
-    s = "fhdr -f -p bias/*/raw/*.fits.gz OBJECT LBCOBNAM FILTER EXPTIME OBSRA OBSDEC > bias/info"
+    s = "fhdr -f -p bias/*/raw/*.fits* OBJECT LBCOBNAM FILTER EXPTIME OBSRA OBSDEC > bias/info"
     print s
     call(s, shell=1)
 
@@ -190,11 +191,11 @@ if 1:
                 call(s, shell=1)
                 names.append(n.replace('.fits.gz', '.fits'))
             writetxt(filtdir + '/list', [sorted(names)], overwrite=1)
-    s = "fhdr -f -p flats/*/raw/*.fits.gz OBJECT LBCOBNAM FILTER EXPTIME OBSRA OBSDEC > flats/info"
+    s = "fhdr -f -p flats/*/raw/*.fits* OBJECT LBCOBNAM FILTER EXPTIME OBSRA OBSDEC > flats/info"
     print s
     call(s, shell=1)
 
-if 0:
+if 1:
     # make links to the science objects
     for obj in objects:
         objdir = 'sci_' + obj
@@ -212,6 +213,6 @@ if 0:
                     call(s, shell=1)
                     names.append(n.replace('.fits.gz', '.fits'))
                 writetxt(filtdir + '/list', [sorted(names)], overwrite=1)
-        s = "fhdr -f -p %s/*/raw/*.fits.gz OBJECT LBCOBNAM FILTER EXPTIME OBSRA OBSDEC > %s/info"
+        s = "fhdr -f -p %s/*/raw/*.fits* OBJECT LBCOBNAM FILTER EXPTIME OBSRA OBSDEC > %s/info"
         print s % (objdir, objdir)
         call(s % (objdir, objdir), shell=1)
