@@ -107,7 +107,7 @@ if 1:
 
         for i,n in enumerate(filenames):
             i += 1
-            print i
+            #print i
             if not i % 20:
                 print i, n
             #print 'reading', n
