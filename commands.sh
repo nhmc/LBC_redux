@@ -1,7 +1,7 @@
 # Note that Barak (https://pypi.python.org/pypi/Barak) must be
 # installed for this pipeline to work.
 
-# Make a directory corresponding to a single nights observations of,
+# Make a directory corresponding to a single night of observations,
 # and a sub-directory called raw/
 
 mkdir 2011oct20
@@ -11,7 +11,7 @@ mkdir raw
 # copy all the raw files lbcb*fits and lbcr*fits from this night into raw/
 
 # Then make a file summarizing all the info about the raw files. Note
-# that fhdr is a scritp included with the Barak package.
+# that fhdr is a script included with the Barak package.
 fhdr -f raw/*.fits.gz INSTRUME OBJECT LBCOBNAM FILTER EXPTIME OBSRA OBSDEC > info
 
 # Now make a directory above 2011oct20 called code/ and copy
