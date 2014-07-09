@@ -152,6 +152,7 @@ if 1:
         print len(unknown), 'unidentified exposures:'
         print ' ', '\n  '.join(textwrap.wrap(' '.join(unknown)))
         saveobj('_sort_LBC.sav', dict(biases=biases,objects=objects,flats=flats))
+        # could be a bug writing out an empty file?
         
         writetxt('sort_LBC_unused', [unused], overwrite=1)
 
